@@ -1,0 +1,39 @@
+<div>
+    <h1>Productos</h1>
+    <form id="addProduct">
+        <label for="title">Nombre: 
+            <input type="text" name="title">
+        </label>
+        <label for="description">Descripción: 
+            <input type="text" name="description">
+        </label>
+        <label for="price">Precio: $
+            <input type="number" name="price">
+        </label>
+        <label for="thumbnail">Imágen: 
+            <input type="text" name="thumbnail">
+        </label>
+        <label for="stock">Stock: 
+            <input type="number" name="stock">
+        </label>
+        <input type="submit">
+    </form>
+</div>
+<div>
+    {{#each docs}}
+        <div>
+            <h3>Nombre: {{this.title}}</h3>
+            <p>Descripción: {{this.description}}.</p>
+            <p>Precio: $ {{this.price}},-</p>
+            <p>Imágen: {{this.thumbnail}}.</p>
+            <p>Stock: {{this.stock}} unidades.</p>
+        </div>
+    {{/each}}
+    {{#if hasPrevPage}}
+        <a href="{{req.baseUrl}}{{req.path}}?limit={{limit}}&page={{prevPage}}">Anterior</a>
+    {{/if}}
+    {{#if hasNextPage}}
+        <a href="{{req.baseUrl}}{{req.path}}?limit={{limit}}&page={{nextPage}}">Siguiente</a>
+    {{/if}}
+</div>
+<script src="/js/index.js"></script>
