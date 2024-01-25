@@ -1,4 +1,4 @@
-import productsModel from "../model/products.model.js";
+import productsModel from "../models/products.model.js";
 
 // cramos una subclase q se extiende de la principal
 export default class ProductManager {
